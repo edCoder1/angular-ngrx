@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'NGRX'`, () => {
+  it(`should have as title 'ngrx-app-test'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('NGRX');
+    expect(app.title).toEqual('ngrx-app-test');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('NGRX app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ngrx-app-test app is running!');
   });
 });
