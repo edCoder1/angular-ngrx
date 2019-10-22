@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 
 import { ShoppingItem } from '../store/models/sopping-item.model';
 import { v4 as uuid } from 'uuid';
-import { AddItemAction } from '../store/actions/sopping.action';
+import { AddItemAction, DeleteItemAction } from '../store/actions/sopping.action';
 
 @Component({
   selector: 'app-shop-list',
@@ -29,6 +29,10 @@ export class ShopListComponent implements OnInit {
     this.newShoppingItem.id = uuid();
     this.store.dispatch(new AddItemAction(this.newShoppingItem));
     this.newShoppingItem = { id: '', name: '' }
+  }
+
+  deleteItem(id: string) {
+    this.store.dispatch(new DeleteItemAction(id))
   }
 
 }

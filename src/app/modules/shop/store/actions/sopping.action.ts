@@ -3,7 +3,8 @@ import { ShoppingItem } from '../models/sopping-item.model';
 
 
 export enum ShoppingActionTypes {
-    ADD_ITEM = '[SHOPPING] Add Item'
+    ADD_ITEM = '[SHOPPING] Add Item',
+    DELETE_ITEM = '[SHOPPING] Delete Item'
 }
 
 export class AddItemAction implements Action {
@@ -14,4 +15,13 @@ export class AddItemAction implements Action {
     }
 }
 
-export type ShoppinngAction = AddItemAction;
+export class DeleteItemAction implements Action {
+    readonly type = ShoppingActionTypes.DELETE_ITEM;
+
+    constructor(public payload: string) {
+
+    }
+}
+
+
+export type ShoppinngAction = AddItemAction | DeleteItemAction;
